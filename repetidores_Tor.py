@@ -1,4 +1,4 @@
-#
+#script para traer ip addresses de repetidores tor utilizando la libreria stem
 
 from stem.descriptor.remote import DescriptorDownloader
 import re
@@ -7,10 +7,10 @@ infoCompleta = ""
 downloader = DescriptorDownloader()
 for descriptor in downloader.get_consensus().run():
   if descriptor.exit_policy.is_exiting_allowed():
-    info = descriptor
-    ip = re.findall( r'[0-9]+(?:\.[0-9]+){3}', str(info))
-    infoCompleta = infoCompleta + "\n" + str(ip)
-    print (info)
+    ipFind = re.findall( r'[0-9]+(?:\.[0-9]+){3}', str(descriptor))
+    ipFind.pop(1)
+    
+    infoCompleta = infoCompleta + "\n" + str(ipFind)
     cont = cont + 1
 
 
