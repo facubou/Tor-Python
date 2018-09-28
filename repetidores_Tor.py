@@ -9,8 +9,8 @@ for descriptor in downloader.get_consensus().run():
   if descriptor.exit_policy.is_exiting_allowed():
     ipFind = re.findall( r'[0-9]+(?:\.[0-9]+){3}', str(descriptor))
     ipFind.pop(1)
-    
-    infoCompleta = infoCompleta + "\n" + str(ipFind)
+    parse = "".join(ipFind)
+    infoCompleta = infoCompleta + "\n" + str(parse)
     cont = cont + 1
 
 
