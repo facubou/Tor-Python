@@ -12,7 +12,14 @@ for descriptor in downloader.get_consensus().run():
     parse = "".join(ipFind)
     infoCompleta = infoCompleta + "\n" + str(parse)
     cont = cont + 1
-
+    
 
 print (infoCompleta)
 print ("Existen: " + str(cont) + " nodos tor")
+try:
+  f = open("export.txt", "a")
+  f.write(infoCompleta)
+  f.close
+  print ("se guardaron los datos en el archivo txt")
+except:
+  print ("no se pudo generar archivo txt")
