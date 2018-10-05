@@ -1,1 +1,1 @@
-# Python Scripting and conection with Tor
+# Python connection with Tor
